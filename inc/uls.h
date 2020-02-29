@@ -55,7 +55,7 @@ typedef struct t_print_uls {
     int longest_name;
     int lines;
     int *cast;
-} s_print;
+}              s_print;
 
 typedef struct t_flags {
     bool l;//+

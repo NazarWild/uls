@@ -5,7 +5,7 @@ static bool cycle_body_stat(s_index *index, char **argv,
     struct stat lt;
     bool res = 0;
 
-    if (lstat(argv[index->index], &lt) != -1) {
+    if (stat(argv[index->index], &lt) != -1) {
         if ((lt.st_mode & MX_IFMT) == MX_IFDIR)
             dirs[index->i++] = mx_strdup(argv[index->index]);
         else
@@ -20,7 +20,7 @@ static bool cycle_body_lstat(s_index *index, char **argv,
     struct stat lt;
     bool res = 0;
 
-    if (stat(argv[index->index], &lt) != -1) {
+    if (lstat(argv[index->index], &lt) != -1) {
         if ((lt.st_mode & MX_IFMT) == MX_IFDIR)
             dirs[index->i++] = mx_strdup(argv[index->index]);
         else
